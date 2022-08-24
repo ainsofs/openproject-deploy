@@ -14,6 +14,10 @@ Make sure you are using the latest version of the Docker images:
 
     docker-compose pull
 
+Use the overrides to fix issue with v12.2
+
+    cp docker-compose.override-default.yml docker-compose.override.yml
+
 Launch the containers:
 
     docker-compose up -d
