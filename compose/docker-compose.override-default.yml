@@ -1,6 +1,0 @@
-version: "3.7"
-
-x-op-app: &app
-  environment:
-    OPENPROJECT_HTTPS: "false"
-    OPENPROJECT_HOST__NAME: "localhost:8080"

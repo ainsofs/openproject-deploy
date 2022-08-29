@@ -61,6 +61,8 @@ services:
       - frontend
     labels:
     - "traefik.http.routers.${PROJECT_NAME}_proxy.rule=Host(`${PROJECT_BASE_URL}`)"
+    - "traefik.http.routers.${PROJECT_NAME}_proxy.entrypoints=websecure"
+    - "traefik.http.routers.${PROJECT_NAME}_proxy.tls.certresolver=myresolver"
 
   web:
     <<: *app
