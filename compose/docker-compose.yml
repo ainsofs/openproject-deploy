@@ -59,6 +59,8 @@ services:
       - web
     networks:
       - frontend
+    labels:
+    - "traefik.http.routers.${PROJECT_NAME}_nginx.rule=Host(`${PROJECT_BASE_URL}`)"
 
   web:
     <<: *app
