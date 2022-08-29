@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+
+  traefik:
+    image: traefik:v2.0
+    container_name: "${PROJECT_NAME}_traefik"
+    command: --api.insecure=true --providers.docker
+    ports:
+    - '8000:80'
+#    - '8080:8080' # Dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+#x-mutagen:
+#  sync:
+#    defaults:
+#      ignore:
+#        vcs: true
+#        paths:
+#        - .DS_Store
+#        - .history
+#        - .idea
+#    drupal:
+#      alpha: "."
+#      beta: "volume://drupal"
+#      configurationBeta:
+#        permissions:
+#          defaultFileMode: 0644
+#          defaultDirectoryMode: 0755
+#          defaultOwner: "id:501"
+#          defaultGroup: "id:20"
+
+#volumes:
+## For macOS users (Mutagen)
+#  drupal:
+## For Xdebug profiler
+#  files:
