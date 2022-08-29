@@ -1,2 +1,4 @@
 *.swp
 *.tar.gz
+
+.env.example
